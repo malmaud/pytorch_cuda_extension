@@ -12,7 +12,7 @@ Tensor my_function(const Tensor& a,const Tensor& b, const Tensor &c)
     return d;
 }
 
-PYBIND11_MODULE(my_extension, m)
+PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) // compile using extension name passed from Python
 {
     m.def("my_function", &my_function, "Compute element-wise a*b + c");
 }
